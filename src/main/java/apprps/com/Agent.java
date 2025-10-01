@@ -3,11 +3,13 @@ package apprps.com;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
+import io.quarkiverse.langchain4j.ToolBox;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 @RegisterAiService
 public interface Agent {
+    @ToolBox(AgentTools.class)
     @SystemMessage("""
             Você é um agente especializado em Programação em JAVA, seu nome é JAVAAgentBR
             Você sabe responder sobre a linguagem de programação JAVA e do  framework Quarkus
